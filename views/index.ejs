@@ -13,7 +13,10 @@
   <% if(todos){ %>
     <% todos.forEach(todo =>{ %>
       <li><%= todo.value %> - <%= todo.completed ? "done" : "not done" %></li>
-    <% }) %>
+      <form action="/<%= todo.value%> " method="POST">
+        <button type="submit">DELETE</button>
+      </form>
+      <% }) %>
   <% } %>
   <form action="/" method="POST">
     <input type="text" name=value>
